@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename= 'styles.css')}}">
+</head>
+<body>
+    {% if best == 0 %}
+        <h3 class="special">Oops! We couldn’t find a match for your selection</h3>
+    {% else %}
+        <p>
+            foods: {{ result[0] }}
+            <br/>
+            calories: {{ result[1] }}
+            <br/>
+            protein: {{ result[2] }}
+        </p>
+    {% endif %}
+    <br/>
+    <a href="/food_arranger" class="link">Try again</a>
+
+</body>
+</html>
