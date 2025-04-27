@@ -8,12 +8,12 @@ app = Flask(__name__)
 def food_arranger():
     if request.method == 'POST':
         food_dict = {}
-        max_cal = request.form.get('max_cal')
-        min_prot = request.form.get('min_prot')
+        max_cal = int(request.form.get('max_cal'))
+        min_prot = int(request.form.get('min_prot'))
         for i in range(1, 4):
             food = request.form.get(f"food{i}")
-            cal = request.form.get(f"cal{i}")
-            prot = request.form.get(f"prot{i}")
+            cal = int(request.form.get(f"cal{i}"))
+            prot = int(request.form.get(f"prot{i}"))
             food_dict[i] = (food, cal, prot)
 
         best_arrange = 0
